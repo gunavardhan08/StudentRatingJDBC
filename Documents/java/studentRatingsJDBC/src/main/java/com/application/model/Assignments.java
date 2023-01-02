@@ -7,10 +7,10 @@ import javax.persistence.Id;
 
 @Entity
 public class Assignments {
-	
+
 	@Id
 	private int id;
-	
+
 	@Override
 	public String toString() {
 		return "Assignments [id=" + id + ", studentName=" + studentName + ", Subject=" + subject
@@ -18,13 +18,13 @@ public class Assignments {
 	}
 
 	private String studentName;
-	
+
 	private String subject;
-	
+
 	private String assignmentCategory;
-	
+
 	private String date;
-	
+
 	private int points;
 
 	public int getId() {
@@ -74,7 +74,5 @@ public class Assignments {
 	public void setPoints(int points) {
 		this.points = points;
 	}
-	
-	
 
 }

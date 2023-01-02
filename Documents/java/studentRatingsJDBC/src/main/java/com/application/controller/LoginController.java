@@ -1,6 +1,5 @@
 package com.application.controller;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,36 +16,31 @@ import java.util.*;
 @Controller
 public class LoginController {
 
-	
 	AssignmentService assignmentService;
-	
+
 	@Autowired
-	public LoginController(AssignmentService assignmentService)
-	{
-		this.assignmentService=assignmentService;
+	public LoginController(AssignmentService assignmentService) {
+		this.assignmentService = assignmentService;
 	}
+
 	@GetMapping("/")
 	public String showHome(@ModelAttribute("Input") Input input) {
 		return "Home";
 	}
-	
+
 	@PostMapping("/home/input")
-	public String getInput(@ModelAttribute("Input") Input input,Model model) {
+	public String getInput(@ModelAttribute("Input") Input input, Model model) {
 		List<TotalScore> list = new ArrayList<>();
-		if(input.getType().equals("Student Name"))
-		{
+		if (input.getType().equals("Student Name")) {
 			list = assignmentService.compute1(input);
-		}
-		else
-		{
+		} else {
 			list = assignmentService.compute2(input);
 		}
-		for(TotalScore t:list)
-			System.out.println(t.toString());
+		
 		model.addAttribute("list", list);
 		return "subject";
 	}
-	
+
 	@ModelAttribute("inputType")
 	public List<String> populateGender() {
 		List<String> list = new ArrayList<>();
@@ -54,6 +48,5 @@ public class LoginController {
 		list.add("Subject");
 		return list;
 	}
-
 
 }

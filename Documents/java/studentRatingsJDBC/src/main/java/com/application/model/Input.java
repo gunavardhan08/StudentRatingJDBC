@@ -1,8 +1,7 @@
 package com.application.model;
 
 public class Input {
-	
-	
+
 	private String type;
 	private String inputText;
 

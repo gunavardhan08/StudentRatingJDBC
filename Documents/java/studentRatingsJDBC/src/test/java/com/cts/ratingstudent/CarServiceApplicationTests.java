@@ -1,4 +1,4 @@
-package com.cts.carservice;
+package com.cts.ratingstudent;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.SpringBootConfiguration;
@@ -6,7 +6,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 @SpringBootConfiguration
-class CarServiceApplicationTests {
+class RatingStudentApplicationTests {
 
 	@Test
 	void contextLoads() {
